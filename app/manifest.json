@@ -1,8 +1,9 @@
 {
   "name": "PIGGY WORLD",
   "description": "Интерактивный мир Farcaster mini app",
-  "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iconUrl-wgW9BtNUuC0cllQnd31V7I6aTkk5sO.png",
-  "externalUrl": "https://v0-farcaster-app-test-publish.vercel.app",
+  "icon": "https://piggy-world.vercel.app/images/piggy-world-title.png",
+  "externalUrl": "https://piggy-world.vercel.app",
+  "screenshots": ["https://piggy-world.vercel.app/images/back-piggy.png"],
   "platforms": {
     "ios": {
       "minVersion": "1.0.0"

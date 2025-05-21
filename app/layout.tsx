@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: "PIGGY WORLD",
     description: "PIGGY WORLD FARCASTER MINI APP",
-    images: ["https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iconUrl-wgW9BtNUuC0cllQnd31V7I6aTkk5sO.png"],
+    images: ["https://v0-farcaster-app-test-publish.vercel.app/images/back-piggy.png"],
   },
     generator: 'v0.dev'
 }
@@ -34,13 +34,14 @@ export default function RootLayout({
           name="fc:frame"
           content={`{
 "version": "next",
-"imageUrl": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iconUrl-wgW9BtNUuC0cllQnd31V7I6aTkk5sO.png",
-"buttons": [
-  {
-    "label": "Открыть Piggy World",
-    "action": "post"
+"imageUrl": "https://v0-farcaster-app-test-publish.vercel.app/images/back-piggy.png",
+"button": {
+  "title": "Играть в Piggy World",
+  "action": {
+    "type": "launch_frame",
+    "url": "https://v0-farcaster-app-test-publish.vercel.app"
   }
-]
+}
 }`}
         />
 

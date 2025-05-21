@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
       message: "Welcome to PIGGY WORLD!",
       // Обновляем фрейм
       frames: {
-        version: "next",
+        version: "vNext",
         image: "https://piggy-world.vercel.app/images/back-piggy.png",
         buttons: [
           {

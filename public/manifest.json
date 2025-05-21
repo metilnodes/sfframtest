@@ -1,8 +1,9 @@
 {
   "name": "PIGGY WORLD",
   "description": "PIGGY WORLD FARCASTER MINI APP",
-  "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iconUrl-wgW9BtNUuC0cllQnd31V7I6aTkk5sO.png",
-  "externalUrl": "https://v0-farcaster-app-test-publish.vercel.app/",
+  "icon": "https://piggy-world.vercel.app/images/piggy-world-title.png",
+  "externalUrl": "https://piggy-world.vercel.app",
+  "screenshots": ["https://piggy-world.vercel.app/images/back-piggy.png"],
   "platforms": {
     "ios": {
       "minVersion": "1.0.0"
@@ -20,15 +21,15 @@
   "author": {
     "name": "metil",
     "contactEmail": "contact@example.com",
-    "url": "https://v0-farcaster-app-test-publish.vercel.app/"
+    "url": "https://piggy-world.vercel.app"
   },
   "categories": ["games", "social", "entertainment", "crypto"],
   "recommendedDevices": ["mobile", "tablet", "desktop"],
   "keywords": ["piggy", "games", "crypto", "social", "farcaster", "nft"],
   "shortDescription": "PIGGY WORLD FARCASTER MINI APP",
   "longDescription": "PIGGY WORLD FARCASTER MINI APP",
-  "privacyPolicyUrl": "https://v0-farcaster-app-test-publish.vercel.app/privacy",
-  "termsOfServiceUrl": "https://v0-farcaster-app-test-publish.vercel.app/terms",
+  "privacyPolicyUrl": "https://piggy-world.vercel.app/privacy",
+  "termsOfServiceUrl": "https://piggy-world.vercel.app/terms",
   "splashBackgroundColor": "#000000",
-  "splashImage": "https://v0-farcaster-app-test-publish.vercel.app/images/piggy-ai-logo.png"
+  "splashImage": "https://piggy-world.vercel.app/images/piggy-ai-logo.png"
 }

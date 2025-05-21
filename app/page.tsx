@@ -193,109 +193,105 @@ function PiggyWorldApp() {
   const LocationContent = selectedLocationData?.content
 
   return (
-    <div className="relative w-full min-h-[100vh] flex items-center justify-center bg-black">
-      <div className="relative w-full max-w-[424px] h-[695px] mx-auto bg-black overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image src={backgroundImage || "/placeholder.svg"} alt="PIGGY WORLD" fill priority className="object-cover" />
-        </div>
-
-        {/* Farcaster buttons */}
-        <div className="absolute top-4 right-4 z-20 flex gap-2">
-          {/* Add to favorites button */}
-          {isFarcasterAvailable && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleAddToFavorites}
-              disabled={isAddingToFavorites}
-              className="bg-[#ff1493]/20 border-[#ff1493]/50 text-white hover:bg-[#ff1493]/30"
-            >
-              <Heart className="h-4 w-4 mr-1" />
-              {isAddingToFavorites ? "Добавление..." : "В избранное"}
-            </Button>
-          )}
-
-          {/* Login button */}
-          {isFarcasterAvailable && !farcasterUser && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleFarcasterLogin}
-              className="bg-[#ff1493]/20 border-[#ff1493]/50 text-white hover:bg-[#ff1493]/30"
-            >
-              <LogIn className="h-4 w-4 mr-1" />
-              Connect
-            </Button>
-          )}
-
-          {/* User info (if logged in) */}
-          {farcasterUser && (
-            <div className="bg-black/50 rounded-full px-3 py-1 text-xs text-white flex items-center">
-              <div className="w-5 h-5 rounded-full bg-[#ff1493]/30 flex items-center justify-center mr-2">
-                {farcasterUser.pfp ? (
-                  <Image
-                    src={farcasterUser.pfp || "/placeholder.svg"}
-                    alt={farcasterUser.displayName || farcasterUser.username}
-                    width={20}
-                    height={20}
-                    className="rounded-full"
-                  />
-                ) : (
-                  <span>{(farcasterUser.displayName || farcasterUser.username || "").substring(0, 1)}</span>
-                )}
-              </div>
-              <span>{farcasterUser.displayName || farcasterUser.username}</span>
-            </div>
-          )}
-        </div>
-
-        {/* Interactive locations */}
-        <div key={mapKey}>
-          {locations.map((location) => (
-            <div
-              key={location.id}
-              className="absolute cursor-pointer hover:scale-110 transition-transform duration-300 z-10"
-              style={location.position as React.CSSProperties}
-              onClick={() => handleLocationClick(location.id)}
-            >
-              <Image
-                src={location.image || "/placeholder.svg"}
-                alt={location.name}
-                width={location.width}
-                height={location.height}
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Location dialog */}
-        <Dialog open={!!selectedLocation} onOpenChange={handleCloseDialog}>
-          <DialogContent className="bg-black border border-[#ff1493] text-white max-w-[424px] h-[90vh] max-h-[695px] p-4">
-            <DialogHeader>
-              <DialogTitle className="text-xl text-[#ff1493] flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={handleCloseDialog}
-                  className="text-[#ff1493] hover:text-white hover:bg-[#ff1493]/20 h-8 w-8"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                </Button>
-                {selectedLocationData?.name || "Location"}
-              </DialogTitle>
-            </DialogHeader>
-
-            <div className="overflow-y-auto max-h-[calc(90vh-80px)]">
-              {LocationContent ? <LocationContent /> : <div>Загрузка содержимого...</div>}
-            </div>
-          </DialogContent>
-        </Dialog>
-
-        {/* Toast notifications */}
-        <Toaster />
+    <div className="relative w-full max-w-[424px] h-[695px] mx-auto bg-black overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image src={backgroundImage || "/placeholder.svg"} alt="PIGGY WORLD" fill priority className="object-cover" />
       </div>
+
+      {/* Farcaster buttons */}
+      <div className="absolute top-4 right-4 z-20 flex gap-2">
+        {/* Add to favorites button */}
+        {isFarcasterAvailable && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleAddToFavorites}
+            disabled={isAddingToFavorites}
+            className="bg-[#ff1493]/20 border-[#ff1493]/50 text-white hover:bg-[#ff1493]/30"
+          >
+            <Heart className="h-4 w-4 mr-1" />
+            {isAddingToFavorites ? "Добавление..." : "В избранное"}
+          </Button>
+        )}
+
+        {/* Login button */}
+        {isFarcasterAvailable && !farcasterUser && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleFarcasterLogin}
+            className="bg-[#ff1493]/20 border-[#ff1493]/50 text-white hover:bg-[#ff1493]/30"
+          >
+            <LogIn className="h-4 w-4 mr-1" />
+            Connect
+          </Button>
+        )}
+
+        {/* User info (if logged in) */}
+        {farcasterUser && (
+          <div className="bg-black/50 rounded-full px-3 py-1 text-xs text-white flex items-center">
+            <div className="w-5 h-5 rounded-full bg-[#ff1493]/30 flex items-center justify-center mr-2">
+              {farcasterUser.pfp ? (
+                <Image
+                  src={farcasterUser.pfp || "/placeholder.svg"}
+                  alt={farcasterUser.displayName || farcasterUser.username}
+                  width={20}
+                  height={20}
+                  className="rounded-full"
+                />
+              ) : (
+                <span>{(farcasterUser.displayName || farcasterUser.username || "").substring(0, 1)}</span>
+              )}
+            </div>
+            <span>{farcasterUser.displayName || farcasterUser.username}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Interactive locations */}
+      <div key={mapKey}>
+        {locations.map((location) => (
+          <div
+            key={location.id}
+            className="absolute cursor-pointer hover:scale-110 transition-transform duration-300 z-10"
+            style={location.position as React.CSSProperties}
+            onClick={() => handleLocationClick(location.id)}
+          >
+            <Image
+              src={location.image || "/placeholder.svg"}
+              alt={location.name}
+              width={location.width}
+              height={location.height}
+              className="object-contain"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Location dialog */}
+      <Dialog open={!!selectedLocation} onOpenChange={handleCloseDialog}>
+        <DialogContent className="bg-black border border-[#ff1493] text-white max-w-[424px] h-[90vh] max-h-[695px] p-4">
+          <DialogHeader>
+            <DialogTitle className="text-xl text-[#ff1493] flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handleCloseDialog}
+                className="text-[#ff1493] hover:text-white hover:bg-[#ff1493]/20 h-8 w-8"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+              {selectedLocationData?.name}
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="overflow-y-auto max-h-[calc(90vh-80px)]">{LocationContent && <LocationContent />}</div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Toast notifications */}
+      <Toaster />
     </div>
   )
 }
