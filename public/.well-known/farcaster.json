@@ -1,0 +1,13 @@
+{
+  "frame": {
+    "version": "1",
+    "name": "PIGGY WORLD",
+    "homeUrl": "https://v0-farcaster-app-test-publish.vercel.app/",
+    "iconUrl": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iconUrl-wgW9BtNUuC0cllQnd31V7I6aTkk5sO.png",
+    "splashImageUrl": "https://v0-farcaster-app-test-publish.vercel.app/images/piggy-ai-logo.png",
+    "splashBackgroundColor": "#000000",
+    "screenshotUrls": [
+      "https://v0-farcaster-app-test-publish.vercel.app/images/piggy-ai-logo.png"
+    ]
+  }
+}
